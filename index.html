@@ -42,11 +42,9 @@
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">single family residence</a></li>
               <li><a href="#">duplex</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li><a href="#">Separated link</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" aria-label="...">
     </div><!-- /input-group Type of structure-->
 
     <div class="input-group">
@@ -60,7 +58,7 @@
               <li><a href="#">split level</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Stories-->
 
     <div class="input-group">
@@ -85,7 +83,7 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Style-->
 
     <div class="input-group">
@@ -110,7 +108,7 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Other Style-->
 
     <div class="input-group">
@@ -128,7 +126,7 @@
               <li><a href="#">side-gable</a></li> 
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Form-->
 
     <div class="input-group">
@@ -141,7 +139,7 @@
               <li><a href="#">flat</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Pitch-->
 
     <div class="input-group">
@@ -165,7 +163,7 @@
               <li><a href="#">wood vertical board</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Cladding-->
 
     <div class="input-group">
@@ -178,7 +176,7 @@
               <li><a href="#">minimal</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Overall Landscaping-->
 
     <div class="input-group">
@@ -191,7 +189,7 @@
               <li><a href="#">obscured behind heavy vegetation</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Setting-->
 
     <div class="input-group">
@@ -206,7 +204,7 @@
               <li><a href="#">irregular</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Plan-->
 
     <div class="input-group">
@@ -217,20 +215,47 @@
               <li><a href="#">non-contributor</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
+      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
     </div><!-- /input-group Contributor Status-->
 
 
 
-  </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-
-  </div><!-- roof -->
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
 </div><!-- container -->
 
     <!-- jQuery(necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Typeahead -->
+    <script src="js/bootstrap3-typeahead.min.js"></script>
+
+
+    <!-- experimenting with Typeahead -->
+    
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('input.typeahead').typeahead({
+
+            name: 'architecture features',
+
+            prefetch: 'convertcsv.json',
+
+            limit: 10
+
+        });
+
+    });  
+
+    </script>
+
+
+
+
   </body>
 </html>
