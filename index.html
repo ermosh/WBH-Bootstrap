@@ -44,7 +44,7 @@
               <li><a href="#">duplex</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" aria-label="...">
+      <input type="text" class="typeahead form-control" aria-label="...">
     </div><!-- /input-group Type of structure-->
 
     <div class="input-group">
@@ -58,7 +58,7 @@
               <li><a href="#">split level</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Stories-->
 
     <div class="input-group">
@@ -83,7 +83,7 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Style-->
 
     <div class="input-group">
@@ -108,7 +108,7 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Other Style-->
 
     <div class="input-group">
@@ -126,7 +126,7 @@
               <li><a href="#">side-gable</a></li> 
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Form-->
 
     <div class="input-group">
@@ -139,7 +139,7 @@
               <li><a href="#">flat</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Pitch-->
 
     <div class="input-group">
@@ -163,7 +163,7 @@
               <li><a href="#">wood vertical board</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Cladding-->
 
     <div class="input-group">
@@ -176,7 +176,7 @@
               <li><a href="#">minimal</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Overall Landscaping-->
 
     <div class="input-group">
@@ -189,7 +189,7 @@
               <li><a href="#">obscured behind heavy vegetation</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Setting-->
 
     <div class="input-group">
@@ -204,7 +204,7 @@
               <li><a href="#">irregular</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Plan-->
 
     <div class="input-group">
@@ -215,7 +215,7 @@
               <li><a href="#">non-contributor</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="form-control" data-provide="typeahead" data-minLength="0" aria-label="...">
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Contributor Status-->
 
 
@@ -234,28 +234,19 @@
 
 
     <!-- experimenting with Typeahead -->
-    
 
     <script type="text/javascript">
-
-    $(document).ready(function(){
-
-        $('input.typeahead').typeahead({
-
-            name: 'architecture features',
-
-            prefetch: 'convertcsv.json',
-
-            limit: 10
-
-        });
-
-    });  
-
+        $(document).ready(function(){
+                $('input.typeahead-example').typeahead({
+                  name: 'architecture features',
+                  prefetch: {url: './json/example.json', ttl: '0'},
+                  limit: 3,
+                  valueKey: 'name',
+                  template: '<p>{{value}}</p>',
+                  engine: Hogan
+                });
+            });
     </script>
-
-
-
 
   </body>
 </html>

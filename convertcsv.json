@@ -1,9 +1,3 @@
-// Then the data gets concatenated into sentences to produce the reports for the various 
-// agencies that need them. 
-
-// records converted from CSV to JSON
-// Columns are parcel number, house number, street, and zip code.
-
 [
   {
     "Parcel Number":5086001019,
