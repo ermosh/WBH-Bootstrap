@@ -4,14 +4,11 @@
     "House Number":"1082",
     "Street Name":"S. Hayworth Ave.",
     "Zip":90035,
-    // Book, Assessor, and Lot are derived from Parcel Number
-        // "Book":5086,
-        // "Assessor Page Number":001,
-        // "Lot":019,
+        "Book":5086,
+        "Assessor Page Number":001,
+        "Lot":019,
     "Block":"",
-        // jpeg holder
     "Portrait":"",
-        // Remaining fields are populated in Access using a dropdown list of architectural elements to inventory
     "Recorder's Data":"",
     "Permit Number":"",
     "Style":"",

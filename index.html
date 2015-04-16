@@ -15,27 +15,40 @@
   <body>
 
   <div class="container">
-    
-  <div class="">
-      <ul class="nav nav-tabs nav-justified" role="tablist" id="navtabs">
-        <li role="presentation" class="active"><a data-target="#">Description</a></li>
-        <li role="presentation"><a data-target="roof">Roof</a></li>
-        <li role="presentation"><a data-taget="#">Chimney</a></li>
-        <li role="presentation"><a data-taget="#">Porch/Balcony</a></li>
-        <li role="presentation"><a data-taget="#">Garage</a></li>
-        <li role="presentation"><a data-taget="#">Windows 1</a></li>
-        <li role="presentation"><a data-taget="#">Windows 2</a></li>
-        <li role="presentation"><a data-taget="#">Windows 3</a></li>
-        <li role="presentation"><a data-taget="#">Door 1</a></li>
-        <li role="presentation"><a data-taget="#">Door 2</a></li>
-        <li role="presentation"><a data-taget="#">Alterations</a></li>
-      </ul>
-  </div>
 
-  <div id="description">
+  <form class="form-inlne" role="form">
+    <div class="form-group">
+      <label for="APN">APN <input id="APN" class="form-control"></label>
+    </div>
+    <div class="form-group">
+      <label for="address">Address <input id="address" class="form-control"></label>
+    </div>
+    <div class="form-group">
+      <label for="GPS">GPS <input id="GPS" class="form-control"></label>
+    </div>
+    <div class="form-group">
+      <label for="year">Year Built <input id="year" class="form-control"></label>
+    </div>
+  </form>
+  
+<div role="tabpanel">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+      <li role="presentation"><a href="#roof" aria-controls="roof" role="tab" data-toggle="tab">Roof</a></li>
+      <li role="presentation"><a href="#chimney" aria-controls="chimney" role="tab" data-toggle="tab">Chimney</a></li>
+      <li role="presentation"><a href="#porch" aria-controls="porch" role="tab" data-toggle="tab">Porch/Balcony</a></li>
+      <li role="presentation"><a href="#garage" aria-controls="garage" role="tab" data-toggle="tab">Garage</a></li>
+      <li role="presentation"><a href="#windows1" aria-controls="windows1" role="tab" data-toggle="tab">Windows 1</a></li>
+      <li role="presentation"><a href="#windows2" aria-controls="windows2" role="tab" data-toggle="tab">Windows 2</a></li>
+      <li role="presentation"><a href="#windows3" aria-controls="windows3" role="tab" data-toggle="tab">Windows 3</a></li>
+      <li role="presentation"><a href="#door1" aria-controls="door1" role="tab" data-toggle="tab">Door 1</a></li>
+      <li role="presentation"><a href="#door2" aria-controls="door2" role="tab" data-toggle="tab">Door 2</a></li>
+      <li role="presentation"><a href="#alterations" aria-controls="alterations" role="tab" data-toggle="tab">Alterations</a></li>
+    </ul>
 
-    <div class="row">
-      <div class="col-lg-4">
+  <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="description">
         <div class="input-group">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Type of Structure <span class="caret"></span></button>
@@ -44,8 +57,9 @@
               <li><a href="#">duplex</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" aria-label="...">
-    </div><!-- /input-group Type of structure-->
+          <input type="text" class="typeahead form-control" aria-label="...">
+        </div><!-- /input-group Type of structure-->
+        </div><!-- end of tabpanel -->
 
     <div class="input-group">
           <div class="input-group-btn">
@@ -218,35 +232,87 @@
       <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Contributor Status-->
 
+    <div id="roof" class="tab-pane" role="tabpanel">
 
+      <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Roof Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">ceramic tile</a></li>
+              <li><a href="#">clay tile</a></li>
+              <li><a href="#">composition shingle</a></li>
+              <li><a href="#">rock roof</a></li>
+              <li><a href="#">rolled asphalt</a></li>
+              <li><a href="#">standing seam</a></li>
+              <li><a href="#">wood shake</a></li>
+              <li><a href="#">wood shingle</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
+    </div><!-- /input-group Roof material-->
 
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
-</div>
-</div><!-- container -->
+    <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Roof Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">barge boards</a></li>
+              <li><a href="#">boxed eaves</a></li>
+              <li><a href="#">crenellation</a></li>
+              <li><a href="#">dentils</a></li>
+              <li><a href="#">dormer</a></li>
+              <li><a href="#">dovecote</a></li>
+              <li><a href="#">exposed purlins</a></li>
+              <li><a href="#">exposed rafter tails</a></li>
+              <li><a href="#">fascia boards</a></li>
+              <li><a href="#">flared eaves</a></li>
+              <li><a href="#">open eaves</a></li>
+              <li><a href="#">pierced roof</a></li>
+              <li><a href="#">tower</a></li>
+              <li><a href="#">turret</a></li>
+              <li><a href="#">wide eaves</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
+    </div><!-- /input-group Roof features-->
+
+    </div> <!-- Roof -->
+
+    <div role="tabpanel" class="tab-pane" id="chimney"></div>
+    <div role="tabpanel" class="tab-pane" id="porch"></div>
+    <div role="tabpanel" class="tab-pane" id="garage"></div>
+    <div role="tabpanel" class="tab-pane" id="windows1"></div>
+    <div role="tabpanel" class="tab-pane" id="windows2"></div>
+    <div role="tabpanel" class="tab-pane" id="windows3"></div>
+    <div role="tabpanel" class="tab-pane" id="door1"></div>
+    <div role="tabpanel" class="tab-pane" id="door2"></div>
+    <div role="tabpanel" class="tab-pane" id="alterations"></div>
+
+    </div> <!-- end of tab-content -->
+  </div> <!-- end of tabpanel -->
+</div> <!-- container -->
 
     <!-- jQuery(necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Typeahead -->
-    <script src="js/bootstrap3-typeahead.min.js"></script>
+    <script src="js/typeahead.js/typeahead.bundle.min.js"></script>
 
 
     <!-- experimenting with Typeahead -->
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-                $('input.typeahead-example').typeahead({
-                  name: 'architecture features',
-                  prefetch: {url: './json/example.json', ttl: '0'},
-                  limit: 3,
-                  valueKey: 'name',
-                  template: '<p>{{value}}</p>',
-                  engine: Hogan
-                });
-            });
-    </script>
+    // <script type="text/javascript">
+    //     $(document).ready(function(){
+    //             $('input.typeahead-example').typeahead({
+    //               name: 'architecture features',
+    //               prefetch: {url: './json/example.json', ttl: '0'},
+    //               limit: 3,
+    //               valueKey: 'name',
+    //               template: '<p>{{value}}</p>',
+    //               engine: Hogan
+    //             });
+    //         });
+    // </script>
 
   </body>
 </html>
