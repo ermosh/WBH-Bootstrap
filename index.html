@@ -11,11 +11,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 
+    <!-- dropdown checkbox -->
+    <link rel="stylesheet" type="text/css" href="js/dropdown-checkbox/css/bootstrap-dropdown-checkbox.css">
+
   </head>
   <body>
 
   <div class="container">
 
+    <div></div>
   <form class="form-inlne" role="form">
     <div class="form-group">
       <label for="APN">APN <input id="APN" class="form-control"></label>
@@ -30,6 +34,10 @@
       <label for="year">Year Built <input id="year" class="form-control"></label>
     </div>
   </form>
+
+  <div id="result">
+    <p>This property is a {{contributor}} to the historic district. This is a {{structure}} in the {{style}} with {{second-style}} influence. The roof is a {{roof-form}} with a {{pitch}} pitch. The site is {{setting}}. The overall plan is {{plan}}. Alterations include {{alterations}}.</p>
+  </div>
   
 <div role="tabpanel">
     <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -57,9 +65,7 @@
               <li><a href="#">duplex</a></li>
             </ul>
           </div><!-- /btn-group -->
-          <input type="text" class="typeahead form-control" aria-label="...">
         </div><!-- /input-group Type of structure-->
-        </div><!-- end of tabpanel -->
 
     <div class="input-group">
           <div class="input-group-btn">
@@ -72,7 +78,6 @@
               <li><a href="#">split level</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Stories-->
 
     <div class="input-group">
@@ -97,7 +102,6 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Style-->
 
     <div class="input-group">
@@ -122,7 +126,6 @@
               <li><a href="#">Tudor Revival</a></li>   
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Other Style-->
 
     <div class="input-group">
@@ -140,7 +143,6 @@
               <li><a href="#">side-gable</a></li> 
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Form-->
 
     <div class="input-group">
@@ -153,7 +155,6 @@
               <li><a href="#">flat</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof Pitch-->
 
     <div class="input-group">
@@ -177,7 +178,6 @@
               <li><a href="#">wood vertical board</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Cladding-->
 
     <div class="input-group">
@@ -190,7 +190,6 @@
               <li><a href="#">minimal</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Overall Landscaping-->
 
     <div class="input-group">
@@ -203,7 +202,6 @@
               <li><a href="#">obscured behind heavy vegetation</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Setting-->
 
     <div class="input-group">
@@ -218,7 +216,6 @@
               <li><a href="#">irregular</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Plan-->
 
     <div class="input-group">
@@ -229,10 +226,12 @@
               <li><a href="#">non-contributor</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Contributor Status-->
+    </div><!-- end of tabpanel -->
 
-    <div id="roof" class="tab-pane" role="tabpanel">
+    <!-- Beginning of Roof tab -->
+
+    <div id="roof" class="tab-pane" role="tabpanel"> 
 
       <div class="input-group">
           <div class="input-group-btn">
@@ -248,7 +247,6 @@
               <li><a href="#">wood shingle</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
     </div><!-- /input-group Roof material-->
 
     <div class="input-group">
@@ -272,47 +270,556 @@
               <li><a href="#">wide eaves</a></li>
             </ul>
           </div><!-- /btn-group -->
-      <input type="text" class="typeahead form-control" data-minLength="0" aria-label="...">
+
     </div><!-- /input-group Roof features-->
+
+    <label for="roof-observations">Other observations - Roof<textarea id="roof-observations" class="form-control" rows="3"></textarea></label>
 
     </div> <!-- Roof -->
 
-    <div role="tabpanel" class="tab-pane" id="chimney"></div>
-    <div role="tabpanel" class="tab-pane" id="porch"></div>
-    <div role="tabpanel" class="tab-pane" id="garage"></div>
-    <div role="tabpanel" class="tab-pane" id="windows1"></div>
-    <div role="tabpanel" class="tab-pane" id="windows2"></div>
-    <div role="tabpanel" class="tab-pane" id="windows3"></div>
-    <div role="tabpanel" class="tab-pane" id="door1"></div>
-    <div role="tabpanel" class="tab-pane" id="door2"></div>
-    <div role="tabpanel" class="tab-pane" id="alterations"></div>
+    <!-- Chimney -->
+
+    <div role="tabpanel" class="tab-pane" id="chimney">
+
+    <label><input type="checkbox" value=""> Include Chimney 1 </label>
+
+    <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Chimney Material 1 <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">brick</a></li>
+              <li><a href="#">stucco</a></li>
+              <li><a href="#">stone</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">pipe</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+    </div><!-- /input-group chimney material-->
+
+    <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Chimney Placement 1 <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">interior</a></li>
+              <li><a href="#">exterior</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+    </div><!-- /input-group chimney placement-->
+
+    <label><input type="checkbox" value=""> Include Chimney 1 </label>
+
+    <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Chimney Material 2 <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">brick</a></li>
+              <li><a href="#">stucco</a></li>
+              <li><a href="#">stone</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">pipe</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+    </div><!-- /input-group chimney material-->
+
+    <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Chimney Placement 2 <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">interior</a></li>
+              <li><a href="#">exterior</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+    </div><!-- /input-group chimney placement-->
+
+    </div> <!-- Chimney -->
+
+    <!-- Porch/Balcony -->
+
+    <div role="tabpanel" class="tab-pane col-sm-2" id="porch">
+      <label><input type="checkbox" value=""> Include Porch </label>
+
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Porch Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">recessed</a></li>
+              <li><a href="#">full-width</a></li>
+              <li><a href="#">partial-width</a></li>
+              <li><a href="#">wraparound</a></li>
+              <li><a href="#">stoop</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Porch Rail <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">brick</a></li>
+              <li><a href="#">cut stone</a></li>
+              <li><a href="#">flagstone</a></li>
+              <li><a href="#">iron</a></li>
+              <li><a href="#">stucco</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">without any</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Porch Supports Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">brick</a></li>
+              <li><a href="#">cut stone</a></li>
+              <li><a href="#">flagstone</a></li>
+              <li><a href="#">iron</a></li>
+              <li><a href="#">stucco</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">without any</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Porch Supports Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">columns</a></li>
+              <li><a href="#">piers</a></li>
+              <li><a href="#">pilasters</a></li>
+              <li><a href="#">posts</a></li>
+            </ul>
+          </div>
+
+    </div> <!-- Porch -->
+
+    <div role="tabpanel" class="tab-pane col-md-4" id="garage">
+
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Garage Placement <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">a detached one-car garage</a></li>
+              <li><a href="#">an integral one-car garage</a></li>
+              <li><a href="#">an integral two-car garage</a></li>
+              <li><a href="#">a detached three-car garage</a></li>
+              <li><a href="#">an integral three-car garage</a></li>
+              <li><a href="#">a carport</a></li>
+              <li><a href="#">a port cochere</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Garage Door <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">an original wood tilt-up</a></li>
+              <li><a href="#">a replacement wood tilt-up</a></li>
+              <li><a href="#">a segemnted roll-up</a></li>
+              
+            </ul>
+          </div>
+
+          <label for="garage-observations">Other observations - Garage<textarea id="garage-observations" class="form-control" rows="3"></textarea></label>
+
+
+    </div> <!-- Garage -->
+
+
+    <div role="tabpanel" class="tab-pane" id="windows1">
+
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 singular/plural <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">singular</a></li>
+              <li><a href="#">plural</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 Placement <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">first floor</a></li>
+              <li><a href="#">first floor left</a></li>
+              <li><a href="#">first floor center</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">second floor</a></li>
+              <li><a href="#">second floor left</a></li>
+              <li><a href="#">second floor center</a></li>
+              <li><a href="#">second floor right</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">awning</a></li>
+              <li><a href="#">casement</a></li>
+              <li><a href="#">double-hung</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">fixed</a></li>
+              <li><a href="#">hopper</a></li>
+              <li><a href="#">jalousie</a></li>
+              <li><a href="#">porthole</a></li>
+              <li><a href="#">single-hung</a></li>
+              <li><a href="#">sliding</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 Grouping <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">bowed bay</a></li>
+              <li><a href="#">canted bay</a></li>
+              <li><a href="#">rounded bay</a></li>
+              <li><a href="#">squared bay</a></li>
+              <li><a href="#">clerestory</a></li>
+              <li><a href="#">corner</a></li>
+              <li><a href="#">grouped</a></li>
+              <li><a href="#">paired</a></li>
+              <li><a href="#">palladian</a></li>
+              <li><a href="#">ribbon</a></li>
+              <li><a href="#">single</a></li>
+              <li><a href="#">tripartite</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">aluminum</a></li>
+              <li><a href="#">glass block</a></li>
+              <li><a href="#">steel</a></li>
+              <li><a href="#">vinyl</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">unknown material</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 1 Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">leaded glass</a></li>
+              <li><a href="#">multi-light</a></li>
+              <li><a href="#">multi-light top ash</a></li>
+              <li><a href="#">transom</a></li>
+              <li><a href="#">flanking casements</a></li>
+              <li><a href="#">flanking double-hung</a></li>
+            </ul>
+          </div>
+
+          <label for="windows1-observations">Other observations - Windows 1<textarea id="windows1-observations" class="form-control" rows="3"></textarea></label>
+
+    </div> <!-- Windows 1 -->
+
+
+    <div role="tabpanel" class="tab-pane" id="windows2">
+
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 singular/plural <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">singular</a></li>
+              <li><a href="#">plural</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 Placement <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">first floor</a></li>
+              <li><a href="#">first floor left</a></li>
+              <li><a href="#">first floor center</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">second floor</a></li>
+              <li><a href="#">second floor left</a></li>
+              <li><a href="#">second floor center</a></li>
+              <li><a href="#">second floor right</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">awning</a></li>
+              <li><a href="#">casement</a></li>
+              <li><a href="#">double-hung</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">fixed</a></li>
+              <li><a href="#">hopper</a></li>
+              <li><a href="#">jalousie</a></li>
+              <li><a href="#">porthole</a></li>
+              <li><a href="#">single-hung</a></li>
+              <li><a href="#">sliding</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 Grouping <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">bowed bay</a></li>
+              <li><a href="#">canted bay</a></li>
+              <li><a href="#">rounded bay</a></li>
+              <li><a href="#">squared bay</a></li>
+              <li><a href="#">clerestory</a></li>
+              <li><a href="#">corner</a></li>
+              <li><a href="#">grouped</a></li>
+              <li><a href="#">paired</a></li>
+              <li><a href="#">palladian</a></li>
+              <li><a href="#">ribbon</a></li>
+              <li><a href="#">single</a></li>
+              <li><a href="#">tripartite</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">aluminum</a></li>
+              <li><a href="#">glass block</a></li>
+              <li><a href="#">steel</a></li>
+              <li><a href="#">vinyl</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">unknown material</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 2 Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">leaded glass</a></li>
+              <li><a href="#">multi-light</a></li>
+              <li><a href="#">multi-light top ash</a></li>
+              <li><a href="#">transom</a></li>
+              <li><a href="#">flanking casements</a></li>
+              <li><a href="#">flanking double-hung</a></li>
+            </ul>
+          </div>
+
+          <label for="windows2-observations">Other observations - Windows 2<textarea id="windows2-observations" class="form-control" rows="3"></textarea></label>
+
+    </div> <!-- Windows 2 -->
+
+    <div role="tabpanel" class="tab-pane" id="windows3">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 singular/plural <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">singular</a></li>
+              <li><a href="#">plural</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 Placement <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">first floor</a></li>
+              <li><a href="#">first floor left</a></li>
+              <li><a href="#">first floor center</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">second floor</a></li>
+              <li><a href="#">second floor left</a></li>
+              <li><a href="#">second floor center</a></li>
+              <li><a href="#">second floor right</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">awning</a></li>
+              <li><a href="#">casement</a></li>
+              <li><a href="#">double-hung</a></li>
+              <li><a href="#">first floor right</a></li>
+              <li><a href="#">fixed</a></li>
+              <li><a href="#">hopper</a></li>
+              <li><a href="#">jalousie</a></li>
+              <li><a href="#">porthole</a></li>
+              <li><a href="#">single-hung</a></li>
+              <li><a href="#">sliding</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 Grouping <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">bowed bay</a></li>
+              <li><a href="#">canted bay</a></li>
+              <li><a href="#">rounded bay</a></li>
+              <li><a href="#">squared bay</a></li>
+              <li><a href="#">clerestory</a></li>
+              <li><a href="#">corner</a></li>
+              <li><a href="#">grouped</a></li>
+              <li><a href="#">paired</a></li>
+              <li><a href="#">palladian</a></li>
+              <li><a href="#">ribbon</a></li>
+              <li><a href="#">single</a></li>
+              <li><a href="#">tripartite</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">aluminum</a></li>
+              <li><a href="#">glass block</a></li>
+              <li><a href="#">steel</a></li>
+              <li><a href="#">vinyl</a></li>
+              <li><a href="#">wood</a></li>
+              <li><a href="#">unknown material</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Windows 3 Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">leaded glass</a></li>
+              <li><a href="#">multi-light</a></li>
+              <li><a href="#">multi-light top ash</a></li>
+              <li><a href="#">transom</a></li>
+              <li><a href="#">flanking casements</a></li>
+              <li><a href="#">flanking double-hung</a></li>
+            </ul>
+          </div>
+
+          <label for="windows3-observations">Other observations - Windows 3<textarea id="windows3-observations" class="form-control" rows="3"></textarea></label>
+
+    </div> <!-- Windows 3 -->
+
+    <div role="tabpanel" class="tab-pane" id="door1">
+
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 1 Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">fully glazed</a></li>
+              <li><a href="#">paneled</a></li>
+              <li><a href="#">partially glazed</a></li>
+              <li><a href="#">slab</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 1 Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">double slab</a></li>
+              <li><a href="#">metal</a></li>
+              <li><a href="#">wood</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 1 Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">single door</a></li>
+              <li><a href="#">double door</a></li>
+              <li><a href="#">French doors</a></li>
+              <li><a href="#">security doors</a></li>
+              <li><a href="#">sliding door</a></li>
+              <li><a href="#">double door</a></li>
+              <li><a href="#">single door</a></li>
+              <li><a href="#">sliding door</a></li>
+              <li><a href="#">varnished ash</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 1 Extras <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">historic hardware</a></li>
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">sidelights</a></li>
+              <li><a href="#">a sidelight</a></li>
+              <li><a href="#">transom</a></li>
+              <li><a href="#">security door</a></li>
+            </ul>
+          </div>
+
+          <label for="door1-observations">Other observations - Door 1<textarea id="door1-observations" class="form-control" rows="3"></textarea></label>
+
+    </div> <!-- Door 1 -->
+
+    <div role="tabpanel" class="tab-pane" id="door2">
+      <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 2 Features <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">fully glazed</a></li>
+              <li><a href="#">paneled</a></li>
+              <li><a href="#">partially glazed</a></li>
+              <li><a href="#">slab</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 2 Material <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">double slab</a></li>
+              <li><a href="#">metal</a></li>
+              <li><a href="#">wood</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 2 Type <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">single door</a></li>
+              <li><a href="#">double door</a></li>
+              <li><a href="#">French doors</a></li>
+              <li><a href="#">security doors</a></li>
+              <li><a href="#">sliding door</a></li>
+              <li><a href="#">double door</a></li>
+              <li><a href="#">single door</a></li>
+              <li><a href="#">sliding door</a></li>
+              <li><a href="#">varnished ash</a></li>
+            </ul>
+          </div>
+
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Door 2 Extras <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">historic hardware</a></li>
+              <li><a href="#">arched opening</a></li>
+              <li><a href="#">sidelights</a></li>
+              <li><a href="#">a sidelight</a></li>
+              <li><a href="#">transom</a></li>
+              <li><a href="#">security door</a></li>
+            </ul>
+          </div>
+
+          <label for="door2-observations">Other observations - Door 2<textarea id="door2-observations" class="form-control" rows="3"></textarea></label>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="alterations">
+
+
+    <div class="myDropdownCheckbox dropdown-checkbox dropdown">
+      <button class="dropdown-checkbox-toggle btn" data-toggle="dropdown">Alterations List <span class="caret"></span><span class="dropdown-checkbox-nbselected"></span></button>
+
+      <div class="dropdown-checkbox-content">
+        <ul class="dropdown-checkbox-menu">
+          <li><div class="layout"><input type="checkbox"><label>addition to front facade</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>addition to rear</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>addition to side elevation</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>addition to upper story</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>completely altered from its original appearance</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>decorative elements added</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>enclosed porch</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>exterior staircase added</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>garage door replaced</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>modified porch</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>no major alterations</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>non-original door</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>security door added</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>replacement windows</label></div></li>
+          <li><div class="layout"><input type="checkbox"><label>stucco</label></div></li>
+        </ul>
+      </div> <!-- end of dropdown-checkbox-content -->
+    </div> <!-- end of dropdown checkbox -->
+    </div> <!-- end of Alterations -->
 
     </div> <!-- end of tab-content -->
   </div> <!-- end of tabpanel -->
 </div> <!-- container -->
 
+</body>
+
     <!-- jQuery(necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Typeahead -->
-    <script src="js/typeahead.js/typeahead.bundle.min.js"></script>
-
-
-    <!-- experimenting with Typeahead -->
-
-    // <script type="text/javascript">
-    //     $(document).ready(function(){
-    //             $('input.typeahead-example').typeahead({
-    //               name: 'architecture features',
-    //               prefetch: {url: './json/example.json', ttl: '0'},
-    //               limit: 3,
-    //               valueKey: 'name',
-    //               template: '<p>{{value}}</p>',
-    //               engine: Hogan
-    //             });
-    //         });
-    // </script>
-
-  </body>
+    <!-- dropdown checkbox -->
+    <script type="text/javascript" src="js/dropdown-checkbox/js/bootstrap-dropdown-checkbox.js"></script>
 </html>
